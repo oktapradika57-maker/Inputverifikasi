@@ -44,7 +44,7 @@ if ticket_id:
         if st.button("Simpan Verifikasi"):
             try:
                 # Update kolom AD (Verifikasi Transfer)
-                worksheet.update_acell(f'AD{row_idx}', status_verifikasi)
+worksheet.update(range_name=f'AD{row_idx}', values=[[status_verifikasi]])
                 st.success(f"Berhasil! Data tiket {ticket_id} di kolom AD telah diupdate menjadi '{status_verifikasi}'.")
             except Exception as e:
                 st.error(f"Gagal mengupdate data: {e}")
